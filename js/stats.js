@@ -13,7 +13,7 @@ const MuscleGroups = new Chart(ctx, {
     ],
     datasets: [{
       label: 'Muscle Group Progress',
-      data: [65, 42, 80, 81, 12, 45],
+      data: [1, 1, 1, 1, 1, 1],
       fill: true,
       backgroundColor: 'rgba(255, 99, 132, 0.2)',
       borderColor: 'rgb(255, 99, 132)',
@@ -60,7 +60,7 @@ function calculateChartData() {
             MuscleGroups.data.datasets[0].data[0] = strengthRank;
             break;
         case "back":
-            MuscleGroups.data.datasets[0].data[1] = strengthRankBack;
+            MuscleGroups.data.datasets[0].data[1] = strengthRank;
             break;
         case "biceps":
             MuscleGroups.data.datasets[0].data[2] = strengthRank;
