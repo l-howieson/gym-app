@@ -68,3 +68,8 @@ h1 {
     padding: 1x;    
     color: white; 
 }
+
+canvas {
+    display: block;
+    margin: 20px auto;
+}
