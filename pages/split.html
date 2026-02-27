@@ -21,6 +21,37 @@
     </nav>
 
     <h2 style="text-align: center">MANAGE YOUR WORKOUT SPLIT</h2>
+    <h2 style="text-align: center">Select days you are available to workout</h2>
+
+    <button id="monday" class="day-button " onclick="toggleDay('monday')">Monday</button>
+    <button id="tuesday" class="day-button " onclick="toggleDay('tuesday')">Tuesday</button>
+    <button id="wednesday" class="day-button " onclick="toggleDay('wednesday')">Wednesday</button>
+    <button id="thursday" class="day-button " onclick="toggleDay('thursday')">Thursday</button>
+    <button id="friday" class="day-button " onclick="toggleDay('friday')">Friday</button>
+    <button id="saturday" class="day-button " onclick="toggleDay('saturday')">Saturday</button>
+    <button id="sunday" class="day-button " onclick="toggleDay('sunday')">Sunday</button>
+
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+    <section id="calendar"></section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const calendarEl = document.getElementById('calendar');
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                events: [
+                    { title: 'Workout Day', start: '2026-02-15' },
+                    { title: 'Rest Day', start: '2026-02-16' },
+                    { title: 'Workout Day', start: '2026-02-17' },
+                    { title: 'Rest Day', start: '2026-02-18' },
+                    { title: 'Workout Day', start: '2026-02-19' }
+                ]
+            });
+            calendar.render();
+        });
+    </script>
     
 </body>
 </html>
