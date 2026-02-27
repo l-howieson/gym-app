@@ -1,14 +1,25 @@
-function ToggleDay() {
-    const dayList = [];
-    const dayButtons = document.querySelectorAll('.day-button');
+function dayToList() {
+    const selectedDays = [];
+    const checkboxes = document.querySelectorAll("input[type='checkbox']");
 
-    for (let i = 0; i < dayButtons.length; i++) {
-        if (dayButtons[i].classList.contains('selected')) {
-            dayList.push(dayButtons[i].id);
+    checkboxes.forEach(box => {
+        if (box.checked) {
+            selectedDays.push(box.value);
         }
-    }
-    return dayList;
+    });
+
+    return selectedDays;
 }
 
+function outputSelectedDays() {
+    const selectedDays = dayToList();
+    const list = document.getElementById("selectedDaysOutput");
 
+    list.innerHTML = ""; // clear previous results
 
+    selectedDays.forEach(day => {
+        const listItem = document.createElement("li");
+        listItem.textContent = day;
+        list.appendChild(listItem);
+    });
+}

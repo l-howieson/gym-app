@@ -42,6 +42,10 @@ function calculateChartData() {
     const weight = document.getElementById("weight").value;
     const reps = document.getElementById("reps").value;
 
+    if (!bodyweight || !weight || !reps < 0) {
+      return 'error invalid input'
+    }
+
     const relativeMuscleMultiplier = {
         "chest": 0.7,
         "back": 0.6,
@@ -55,29 +59,20 @@ function calculateChartData() {
     
     // Add function if rank goes above 100 to cap it at 100
 
-    switch(muscleGroup) {
-        case "chest":
-            MuscleGroups.data.datasets[0].data[0] = strengthRank;
-            break;
-        case "back":
-            MuscleGroups.data.datasets[0].data[1] = strengthRank;
-            break;
-        case "biceps":
-            MuscleGroups.data.datasets[0].data[2] = strengthRank;
-            break;
-        case "triceps":
-            MuscleGroups.data.datasets[0].data[3] = strengthRank;
-            break;
-        case "shoulders":
-            MuscleGroups.data.datasets[0].data[4] = strengthRank;
-            break;
-        case "legs":
-            MuscleGroups.data.datasets[0].data[5] = strengthRank;
-            break;
+    const muscleGroupIndex = {
+      chest: 0,
+      back: 1,
+      biceps: 2,
+      triceps: 3,
+      shoulders: 4,
+      legs: 5
     }
 
-    // Update the chart data
-    MuscleGroups.update();
+    if (muscleGroup in muscleGroupIndex) {
+      MuscleGroups.data.datasets[0].data[muscleGroupIndex[muscleGroup]] = strengthRank;
+    }
 
-    
+
+    // Update the chart data
+    MuscleGroups.update();   
 }
