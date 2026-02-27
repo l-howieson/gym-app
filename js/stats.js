@@ -13,7 +13,7 @@ const MuscleGroups = new Chart(ctx, {
     ],
     datasets: [{
       label: 'Muscle Group Progress',
-      data: [1, 1, 1, 1, 1, 1],
+      data: [51, 67, 23, 45, 12, 88],
       fill: true,
       backgroundColor: 'rgba(255, 99, 132, 0.2)',
       borderColor: 'rgb(255, 99, 132)',
