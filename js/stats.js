@@ -1,40 +1,44 @@
 const ctx = document.querySelector("#MuscleGroups");
 
-const MuscleGroups = new Chart(ctx, {
-  type: "radar",
-  data: {
-    labels: [
-      'Chest',
-      'Back',
-      'Biceps',
-      'Triceps',
-      'Shoulders',
-      'Legs',
-    ],
-    datasets: [{
-      label: 'Muscle Group Progress',
-      data: [51, 67, 23, 45, 12, 88],
-      fill: true,
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: 'rgb(255, 99, 132)',
-      pointBackgroundColor: 'rgb(255, 99, 132)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgb(255, 99, 132)'
-    }]
-  },
-  options: {
-    responsive: true,
-    scales: {
-      r: {
-        min: 0,
-        max: 100,
-        ticks: {stepsize: 20}
+
+function createChart() {
+  const canvas = document.getElementById("MuscleGroups");
+  canvas.style.display = "block"; // Show the canvas when the chart is created
+  new Chart(ctx, {
+    type: "radar",
+    data: {
+      labels: [
+        'Chest',
+        'Back',
+        'Biceps',
+        'Triceps',
+        'Shoulders',
+        'Legs',
+      ],
+      datasets: [{
+        label: 'Muscle Group Progress',
+        data: [51, 67, 23, 45, 12, 88],
+        fill: true,
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgb(255, 99, 132)',
+        pointBackgroundColor: 'rgb(255, 99, 132)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(255, 99, 132)'
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        r: {
+          min: 0,
+          max: 100,
+          ticks: {stepsize: 20}
+        }
       }
     }
-  }
-});
-
+  })
+}
 
 function calculateChartData() {
     const muscleGroup = document.getElementById("muscleGroup").value;

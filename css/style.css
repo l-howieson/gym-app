@@ -72,3 +72,10 @@ canvas {
     margin: 20px auto;
 }
 
+#statsForm label,
+#statsForm input,
+#statsForm select,
+#statsForm button {
+    display: block;
+    margin-bottom: 16px;
+}
