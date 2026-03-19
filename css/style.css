@@ -72,10 +72,9 @@ canvas {
     margin: 20px auto;
 }
 
-#statsForm label,
-#statsForm input,
-#statsForm select,
-#statsForm button {
-    display: block;
-    margin-bottom: 16px;
+.statsForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
 }

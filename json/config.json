@@ -1,0 +1,18 @@
+{
+  "muscles": ["chest", "back", "biceps", "triceps", "shoulders", "legs"],
+  "relativeMuscleMultiplier": {
+    "chest": 0.7,
+    "back": 0.6,
+    "biceps": 1.0,
+    "triceps": 0.9,
+    "shoulders": 1.0,
+    "legs": 0.45
+  },
+  "chartOptions": {
+    "min": 0,
+    "max": 100,
+    "stepSize": 20,
+    "backgroundColor": "rgba(255, 99, 132, 0.2)",
+    "borderColor": "rgb(255, 99, 132)"
+  }
+}

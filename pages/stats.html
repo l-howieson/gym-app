@@ -20,42 +20,59 @@
         </ul>
     </nav>
 
-    <form id="statsForm">
-        <label for="bodyWeight">Enter Body Weight:</label>
-        <input type="number" id="bodyWeight" name="bodyWeight">
-        
+<form id="statsForm">
+  <label for="bodyWeight">Body Weight:</label>
+  <input type="number" id="bodyWeight" name="bodyWeight" placeholder="kg">
 
-        <label for="muscleGroup">Select Muscle Group:</label>
-        <select id="muscleGroup" name="muscleGroup">
-            <option value="chest">Chest</option>
-            <option value="back">Back</option>
-            <option value="biceps">Biceps</option>
-            <option value="triceps">Triceps</option>
-            <option value="shoulders">Shoulders</option>
-            <option value="legs">Legs</option>
-        </select>
-        <br>
+  <table id="statsTable">
+    <thead>
+      <tr>
+        <th>Muscle Group</th>
+        <th>Weight Lifted (kg)</th>
+        <th>Reps</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Chest</td>
+        <td><input type="number" id="chestWeight" placeholder="kg"></td>
+        <td><input type="number" id="chestReps" placeholder="reps"></td>
+      </tr>
+      <tr>
+        <td>Back</td>
+        <td><input type="number" id="backWeight" placeholder="kg"></td>
+        <td><input type="number" id="backReps" placeholder="reps"></td>
+      </tr>
+      <tr>
+        <td>Biceps</td>
+        <td><input type="number" id="bicepsWeight" placeholder="kg"></td>
+        <td><input type="number" id="bicepsReps" placeholder="reps"></td>
+      </tr>
+      <tr>
+        <td>Triceps</td>
+        <td><input type="number" id="tricepsWeight" placeholder="kg"></td>
+        <td><input type="number" id="tricepsReps" placeholder="reps"></td>
+      </tr>
+      <tr>
+        <td>Shoulders</td>
+        <td><input type="number" id="shouldersWeight" placeholder="kg"></td>
+        <td><input type="number" id="shouldersReps" placeholder="reps"></td>
+      </tr>
+      <tr>
+        <td>Legs</td>
+        <td><input type="number" id="legsWeight" placeholder="kg"></td>
+        <td><input type="number" id="legsReps" placeholder="reps"></td>
+      </tr>
+    </tbody>
+  </table>
 
-        <label for="weight">Enter Weight:</label>
-        <input type="number" id="weight" name="weight">
-        <br>
-
-        <label for="reps">Enter Reps:</label>
-        <input type="number" id="reps" name="reps">
-        <br>
-        <button id="submit" onclick="calculateChartData()">Submit</button>
-    </form>
+  <button type="button" id="submit" onclick="createChart()">Submit</button>
+</form>
 
     <canvas id="MuscleGroups" style="width:100%;max-width:550px;display: none;"></canvas>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/stats.js"></script>
-
-    <script>
-        const submitButton = document.getElementById('submit');
-        submitButton.addEventListener('click', createChart);
-
-    </script>
     
     
 
